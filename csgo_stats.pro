@@ -15,11 +15,13 @@ TEMPLATE = app
 SOURCES += main.cpp\
         user_select_dialog.cpp \
     file_download.cpp \
-    stats_display_window.cpp
+    stats_display_window.cpp \
+    parse_file.cpp
 
 HEADERS  += user_select_dialog.h \
     file_download.h \
-    stats_display_window.h
+    stats_display_window.h \
+    parse_file.h
 
 FORMS    += user_select_dialog.ui \
     stats_display_window.ui

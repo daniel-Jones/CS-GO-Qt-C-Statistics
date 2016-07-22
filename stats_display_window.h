@@ -3,11 +3,8 @@
 
 #include <QWidget>
 #include <QDebug>
-#include <QByteArray>
-#include <QFile>
-#include <QJsonObject>
-#include <QJsonDocument>
 #include "file_download.h"
+#include "parse_file.h"
 
 namespace Ui {
 class stats_display_window;
@@ -28,18 +25,21 @@ public:
 private:
     Ui::stats_display_window *ui;
 
-    struct user_info {
+    struct user_info { /* contains our user data for both steam and csgo */
         QString username;
         QString realname;
         QString avatar_url;
+        QString status;
+        QString time_ingame;
     } user;
 
     file_download download;
+    parse_file parse;
 signals:
       void window_loaded();
 
 private slots:
-    void test();
+    void window_open();
 };
 
 #endif // STATS_DISPLAY_WINDOW_H
