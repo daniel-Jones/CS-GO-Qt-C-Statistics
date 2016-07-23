@@ -1,0 +1,38 @@
+<RCC>
+    <qresource prefix="/icons">
+        <file>icons/mvp.png</file>
+        <file>icons/avatar.jpg</file>
+    </qresource>
+    <qresource prefix="/weapons">
+        <file>weapons/ak47.png</file>
+        <file>weapons/aug.png</file>
+        <file>weapons/awp.png</file>
+        <file>weapons/bizon.png</file>
+        <file>weapons/deagle.png</file>
+        <file>weapons/elite.png</file>
+        <file>weapons/famas.png</file>
+        <file>weapons/fiveseven.png</file>
+        <file>weapons/g3sg1.png</file>
+        <file>weapons/galilar.png</file>
+        <file>weapons/glock.png</file>
+        <file>weapons/hegrenade.png</file>
+        <file>weapons/hkp2000.png</file>
+        <file>weapons/knife.png</file>
+        <file>weapons/m4.png</file>
+        <file>weapons/m249.png</file>
+        <file>weapons/mac10.png</file>
+        <file>weapons/mag7.png</file>
+        <file>weapons/mp7.png</file>
+        <file>weapons/negev.png</file>
+        <file>weapons/nova.png</file>
+        <file>weapons/p90.png</file>
+        <file>weapons/p250.png</file>
+        <file>weapons/sawedoff.png</file>
+        <file>weapons/scar20.png</file>
+        <file>weapons/sg556.png</file>
+        <file>weapons/ssg08.png</file>
+        <file>weapons/tec9.png</file>
+        <file>weapons/ump45.png</file>
+        <file>weapons/xm1014.png</file>
+    </qresource>
+</RCC>

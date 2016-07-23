@@ -25,6 +25,8 @@ private:
     Ui::user_select_dialog *ui;
     file_download download;
     stats_display_window n_window;
+    void download_info();
+    void load_players();
 };
 
 #endif // USER_SELECT_DIALOG_H

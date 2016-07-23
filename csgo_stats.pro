@@ -25,3 +25,6 @@ HEADERS  += user_select_dialog.h \
 
 FORMS    += user_select_dialog.ui \
     stats_display_window.ui
+
+RESOURCES += \
+    csgo_images.qrc
