@@ -6,6 +6,7 @@ user_select_dialog::user_select_dialog(QWidget *parent) :
     ui(new Ui::user_select_dialog)
 {
     ui->setupUi(this);
+    load_players();
 }
 
 user_select_dialog::~user_select_dialog()
@@ -49,6 +50,8 @@ void user_select_dialog::download_info()
     {
         qDebug() << "Downloaded everything"; /* file could be ANYTHING or empty! */
         n_window.show();
+        usernames.clear();
+        userids.clear();
         this->hide();
     }
     else
@@ -63,5 +66,17 @@ void user_select_dialog::download_info()
 
 void user_select_dialog::load_players()
 {
+    parse.parse_users();
+    usernames = parse.get_usernames();
+    userids = parse.get_ids();
+    for (int x = 0; x < usernames.length(); x++)
+    {
+        ui->player_dropdown->addItem(usernames.at(x));
+    }
+}
 
+void user_select_dialog::on_player_dropdown_currentIndexChanged(int index)
+{
+    if (!usernames.isEmpty())
+        ui->steam_url_text->setText(userids.at(index));
 }

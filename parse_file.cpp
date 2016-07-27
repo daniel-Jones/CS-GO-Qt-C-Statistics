@@ -47,3 +47,47 @@ QString parse_file::parse_csgo_data(QString option)
     }
     return "null";
 }
+
+void parse_file::parse_users()
+{
+    /*
+     * This function populates our dropdown menu with users
+     *
+     * example users.dat file:
+     *
+     * daniel_j=76561198055087665
+     * ScruffyRules=76561198046533376
+     *
+     */
+    usernames.clear();
+    userids.clear();
+
+        QFile inputFile("users.dat");
+        if (inputFile.open(QIODevice::ReadOnly))
+        {
+            QTextStream in(&inputFile);
+            while (!in.atEnd())
+            {
+                QString line = in.readLine();
+                if (line.contains("="))
+                {
+                    usernames.append(line.split("=")[0]);
+                    userids.append(line.split("=")[1]);
+                }
+            }
+            inputFile.close();
+        } else
+        {
+            qDebug() << "No users loaded.";
+        }
+}
+
+QStringList parse_file::get_usernames()
+{
+    return usernames;
+}
+
+QStringList parse_file::get_ids()
+{
+    return userids;
+}

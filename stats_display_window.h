@@ -27,6 +27,7 @@ private:
     void setup_user();
     void setup_csgo_data();
     void reload_profile();
+    void load_players();
     struct user_info {
         /* contains our user data for both steam and csgo */
         QString username;
@@ -36,6 +37,9 @@ private:
         QString status;
         QString time_ingame;
         QString mvp_count;
+        QString total_kills;
+        QString total_deaths;
+        float kd_ratio;
         /* weapon stats */
         QString ak47_kills;
         QString deagle_kills;
@@ -68,9 +72,10 @@ private:
         QString ump45_kills;
         QString xm1014_kills;
     } user;
-
     file_download download;
     parse_file parse;
+    QStringList usernames;
+    QStringList userids;
 signals:
       void window_loaded();
 
@@ -78,6 +83,7 @@ private slots:
     void window_open();
     void on_refresh_button_clicked();
     void on_new_id_button_clicked();
+    void on_users_dropdown_currentIndexChanged(int index);
 };
 
 #endif // STATS_DISPLAY_WINDOW_H

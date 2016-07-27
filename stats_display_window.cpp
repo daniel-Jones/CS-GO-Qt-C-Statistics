@@ -69,8 +69,8 @@ void stats_display_window::setup_user()
 void stats_display_window::setup_csgo_data()
 {
     /* most of the things in this function are images */
-    int w = 100;
-    int h = 50;
+    int w = 80;
+    int h = 40;
     ui->weapon_table->setColumnCount(2);
     ui->weapon_table->setRowCount(29);
     /* mvp */
@@ -83,6 +83,17 @@ void stats_display_window::setup_csgo_data()
     user.time_ingame = parse.parse_csgo_data("total_time_played");
     QString time_in_game = "Hours in CS:GO: " + QString::number(user.time_ingame.toInt() / 3600);
     ui->time_in_label->setText(time_in_game);
+    /* total kills */
+    user.total_kills = parse.parse_csgo_data("total_kill");
+    ui->total_kills_label->setText("Total kills: " + QString::number(user.total_kills.toInt()));
+    /* total deaths */
+    user.total_deaths = parse.parse_csgo_data("total_deaths");
+    ui->total_deaths_label->setText("Total deaths: " + QString::number(user.total_deaths.toInt()));
+    /* k/d ratio */
+    user.kd_ratio = QString::number(user.total_kills.toFloat() / user.total_deaths.toFloat()).toFloat();
+    ui->kd_ratio_label->setText("K/D Ratio: " + QString::number(user.kd_ratio));
+    /* WEAPONS */
+
     /* awp */
     QLabel *awp_label = new QLabel(this);
     QLabel *awp_kills_label = new QLabel(this);
@@ -107,7 +118,7 @@ void stats_display_window::setup_csgo_data()
     QLabel *deagle_label = new QLabel(this);
     QLabel *deagle_kills_label = new QLabel(this);
     QPixmap deagle(":/weapons/weapons/deagle.png");
-    deagle_label->setPixmap(deagle.scaled(w / 2, h));
+    deagle_label->setPixmap(deagle.scaled(w, h));
     user.deagle_kills = parse.parse_csgo_data("total_kills_deagle");
     QString deagle_kills_text = user.deagle_kills + " kills";
     deagle_kills_label->setText(deagle_kills_text);
@@ -116,7 +127,7 @@ void stats_display_window::setup_csgo_data()
     /* m4 */
     QLabel *m4_label = new QLabel(this);
     QLabel *m4_kills_label = new QLabel(this);
-    QPixmap m4(":/weapons/weapons/m4.png");
+    QPixmap m4(":/weapons/weapons/m4a1.png");
     m4_label->setPixmap(m4.scaled(w, h));
     user.m4_kills = parse.parse_csgo_data("total_kills_m4");
     QString m4_kills_text = user.m4_kills + " kills";
@@ -167,7 +178,7 @@ void stats_display_window::setup_csgo_data()
     QLabel *fiveseven_label = new QLabel(this);
     QLabel *fiveseven_kills_label = new QLabel(this);
     QPixmap fiveseven(":/weapons/weapons/fiveseven.png");
-    fiveseven_label->setPixmap(fiveseven.scaled(w / 2, h));
+    fiveseven_label->setPixmap(fiveseven.scaled(w , h));
     user.fiveseven_kills = parse.parse_csgo_data("total_kills_fiveseven");
     QString fiveseven_kills_text = user.fiveseven_kills + " kills";
     fiveseven_kills_label->setText(fiveseven_kills_text);
@@ -186,7 +197,7 @@ void stats_display_window::setup_csgo_data()
     /* galilar */
     QLabel *galilar_label = new QLabel(this);
     QLabel *galilar_kills_label = new QLabel(this);
-    QPixmap galilar(":/weapons/weapons/galilar.png");
+    QPixmap galilar(":/weapons/weapons/galil.png");
     galilar_label->setPixmap(galilar.scaled(w, h));
     user.galilar_kills = parse.parse_csgo_data("total_kills_galilar");
     QString galilar_kills_text = user.galilar_kills + " kills";
@@ -197,7 +208,7 @@ void stats_display_window::setup_csgo_data()
     QLabel *glock_label = new QLabel(this);
     QLabel *glock_kills_label = new QLabel(this);
     QPixmap glock(":/weapons/weapons/glock.png");
-    glock_label->setPixmap(glock.scaled(w / 2, h));
+    glock_label->setPixmap(glock.scaled(w , h));
     user.glock_kills = parse.parse_csgo_data("total_kills_glock");
     QString glock_kills_text = user.glock_kills + " kills";
     glock_kills_label->setText(glock_kills_text);
@@ -217,7 +228,7 @@ void stats_display_window::setup_csgo_data()
     QLabel *hkp2000_label = new QLabel(this);
     QLabel *hkp2000_kills_label = new QLabel(this);
     QPixmap hkp2000(":/weapons/weapons/hkp2000.png");
-    hkp2000_label->setPixmap(hkp2000.scaled(w / 2, h));
+    hkp2000_label->setPixmap(hkp2000.scaled(w , h));
     user.hkp2000_kills = parse.parse_csgo_data("total_kills_hkp2000");
     QString hkp2000_kills_text = user.hkp2000_kills + " kills";
     hkp2000_kills_label->setText(hkp2000_kills_text);
@@ -227,7 +238,7 @@ void stats_display_window::setup_csgo_data()
     QLabel *knife_label = new QLabel(this);
     QLabel *knife_kills_label = new QLabel(this);
     QPixmap knife(":/weapons/weapons/knife.png");
-    knife_label->setPixmap(knife.scaled(w / 2, h));
+    knife_label->setPixmap(knife.scaled(w, h / 2));
     user.knife_kills = parse.parse_csgo_data("total_kills_knife");
     QString knife_kills_text = user.knife_kills + " kills";
     knife_kills_label->setText(knife_kills_text);
@@ -237,7 +248,7 @@ void stats_display_window::setup_csgo_data()
     QLabel *mac10_label = new QLabel(this);
     QLabel *mac10_kills_label = new QLabel(this);
     QPixmap mac10(":/weapons/weapons/mac10.png");
-    mac10_label->setPixmap(mac10.scaled(w / 2, h));
+    mac10_label->setPixmap(mac10.scaled(w , h));
     user.mac10_kills = parse.parse_csgo_data("total_kills_mac10");
     QString mac10_kills_text = user.mac10_kills + " kills";
     mac10_kills_label->setText(mac10_kills_text);
@@ -257,7 +268,7 @@ void stats_display_window::setup_csgo_data()
     QLabel *mp7_label = new QLabel(this);
     QLabel *mp7_kills_label = new QLabel(this);
     QPixmap mp7(":/weapons/weapons/mp7.png");
-    mp7_label->setPixmap(mp7.scaled(w / 2, h));
+    mp7_label->setPixmap(mp7.scaled(w , h));
     user.mp7_kills = parse.parse_csgo_data("total_kills_mp7");
     QString mp7_kills_text = user.mp7_kills + " kills";
     mp7_kills_label->setText(mp7_kills_text);
@@ -287,7 +298,7 @@ void stats_display_window::setup_csgo_data()
     QLabel *p250_label = new QLabel(this);
     QLabel *p250_kills_label = new QLabel(this);
     QPixmap p250(":/weapons/weapons/p250.png");
-    p250_label->setPixmap(p250.scaled(w / 2, h));
+    p250_label->setPixmap(p250.scaled(w , h));
     user.p250_kills = parse.parse_csgo_data("total_kills_p250");
     QString p250_kills_text = user.p250_kills + " kills";
     p250_kills_label->setText(p250_kills_text);
@@ -347,7 +358,7 @@ void stats_display_window::setup_csgo_data()
     QLabel *tec9_label = new QLabel(this);
     QLabel *tec9_kills_label = new QLabel(this);
     QPixmap tec9(":/weapons/weapons/tec9.png");
-    tec9_label->setPixmap(tec9.scaled(w / 2, h));
+    tec9_label->setPixmap(tec9.scaled(w , h));
     user.tec9_kills = parse.parse_csgo_data("total_kills_tec9");
     QString tec9_kills_text = user.tec9_kills + " kills";
     tec9_kills_label->setText(tec9_kills_text);
@@ -373,6 +384,7 @@ void stats_display_window::setup_csgo_data()
     xm1014_kills_label->setText(xm1014_kills_text);
     ui->weapon_table->setCellWidget(28, 0, xm1014_label);
     ui->weapon_table->setCellWidget(28, 1, xm1014_kills_label);
+    /* holy shit, find a better way to do this */
 }
 
 void stats_display_window::reload_profile()
@@ -398,6 +410,21 @@ void stats_display_window::reload_profile()
     }
 }
 
+void stats_display_window::load_players()
+{
+    /* fill our lists and dropdown box with user data */
+    ui->users_dropdown->clear();
+    usernames.clear();
+    userids.clear();
+    parse.parse_users();
+    usernames = parse.get_usernames();
+    userids = parse.get_ids();
+    for (int x = 0; x < usernames.length(); x++)
+    {
+        ui->users_dropdown->addItem(usernames.at(x));
+    }
+}
+
 void stats_display_window::showEvent(QShowEvent *ev)
 {
     emit window_loaded();
@@ -409,18 +436,28 @@ void stats_display_window::window_open()
      * this slot is called when our stats window is opened
      * we will call our user setup function
      * we will then call our csgo data setup function
+     * we then need to load our players into the drop down box and lists
      */
     setup_user();
     setup_csgo_data();
+    load_players();
 }
 
 void stats_display_window::on_refresh_button_clicked()
 {
    reload_profile();
+   load_players();
 }
 
 void stats_display_window::on_new_id_button_clicked()
 {
     user.user_64id = ui->new_steam_id->text();
     reload_profile();
+    load_players();
+}
+
+void stats_display_window::on_users_dropdown_currentIndexChanged(int index)
+{
+    if (!usernames.isEmpty() && index != -1)
+        ui->new_steam_id->setText(userids.at(index));
 }

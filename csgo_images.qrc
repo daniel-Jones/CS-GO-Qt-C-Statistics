@@ -8,31 +8,56 @@
         <file>weapons/aug.png</file>
         <file>weapons/awp.png</file>
         <file>weapons/bizon.png</file>
+        <file>weapons/cz75a.png</file>
         <file>weapons/deagle.png</file>
+        <file>weapons/decoy.png</file>
+        <file>weapons/decoy_impact.png</file>
+        <file>weapons/domination.png</file>
         <file>weapons/elite.png</file>
         <file>weapons/famas.png</file>
         <file>weapons/fiveseven.png</file>
+        <file>weapons/flashbang.png</file>
+        <file>weapons/flashbang_impact.png</file>
         <file>weapons/g3sg1.png</file>
-        <file>weapons/galilar.png</file>
+        <file>weapons/galil.png</file>
         <file>weapons/glock.png</file>
+        <file>weapons/grenade.png</file>
+        <file>weapons/headshot.png</file>
         <file>weapons/hegrenade.png</file>
+        <file>weapons/hegrenade_impact.png</file>
         <file>weapons/hkp2000.png</file>
+        <file>weapons/incgreande.png</file>
+        <file>weapons/incgreande_impact.png</file>
         <file>weapons/knife.png</file>
-        <file>weapons/m4.png</file>
-        <file>weapons/m249.png</file>
+        <file>weapons/m4a1.png</file>
         <file>weapons/mac10.png</file>
         <file>weapons/mag7.png</file>
+        <file>weapons/molotov.png</file>
+        <file>weapons/molotov_impact.png</file>
         <file>weapons/mp7.png</file>
+        <file>weapons/mpn.png</file>
         <file>weapons/negev.png</file>
         <file>weapons/nova.png</file>
-        <file>weapons/p90.png</file>
         <file>weapons/p250.png</file>
+        <file>weapons/p90.png</file>
+        <file>weapons/penetrate.png</file>
+        <file>weapons/revenge.png</file>
+        <file>weapons/revolver.png</file>
         <file>weapons/sawedoff.png</file>
+        <file>weapons/scar17.png</file>
         <file>weapons/scar20.png</file>
+        <file>weapons/scout.png</file>
+        <file>weapons/sg550.png</file>
+        <file>weapons/sg552.png</file>
         <file>weapons/sg556.png</file>
+        <file>weapons/smokegrenade.png</file>
+        <file>weapons/smokegrenade_impact.png</file>
         <file>weapons/ssg08.png</file>
+        <file>weapons/suicide.png</file>
+        <file>weapons/taser.png</file>
         <file>weapons/tec9.png</file>
         <file>weapons/ump45.png</file>
+        <file>weapons/usp.png</file>
         <file>weapons/xm1014.png</file>
     </qresource>
 </RCC>

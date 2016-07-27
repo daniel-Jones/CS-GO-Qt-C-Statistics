@@ -24,12 +24,29 @@
      </property>
     </widget>
    </item>
-   <item row="4" column="1">
+   <item row="6" column="1">
     <widget class="QLineEdit" name="new_steam_id">
      <property name="placeholderText">
-      <string>New steam account ID here</string>
+      <string>New Steam account ID here</string>
      </property>
     </widget>
+   </item>
+   <item row="7" column="0">
+    <widget class="QPushButton" name="close_button">
+     <property name="text">
+      <string>Close</string>
+     </property>
+    </widget>
+   </item>
+   <item row="7" column="1">
+    <widget class="QPushButton" name="new_id_button">
+     <property name="text">
+      <string>New ID</string>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="1">
+    <widget class="QComboBox" name="users_dropdown"/>
    </item>
    <item row="0" column="0">
     <layout class="QFormLayout" name="stats_layout">
@@ -69,13 +86,6 @@
        </property>
       </widget>
      </item>
-     <item row="5" column="0">
-      <widget class="QLabel" name="mvp_label">
-       <property name="text">
-        <string>MVP_IMAGE</string>
-       </property>
-      </widget>
-     </item>
      <item row="4" column="0">
       <widget class="QLabel" name="time_in_label">
        <property name="text">
@@ -87,6 +97,34 @@
       <widget class="QLabel" name="mvp_number_label">
        <property name="text">
         <string>MVPs</string>
+       </property>
+      </widget>
+     </item>
+     <item row="7" column="0">
+      <widget class="QLabel" name="total_kills_label">
+       <property name="text">
+        <string>total kills</string>
+       </property>
+      </widget>
+     </item>
+     <item row="8" column="0">
+      <widget class="QLabel" name="total_deaths_label">
+       <property name="text">
+        <string>total deaths</string>
+       </property>
+      </widget>
+     </item>
+     <item row="9" column="0">
+      <widget class="QLabel" name="kd_ratio_label">
+       <property name="text">
+        <string>K/D ratio</string>
+       </property>
+      </widget>
+     </item>
+     <item row="5" column="0">
+      <widget class="QLabel" name="mvp_label">
+       <property name="text">
+        <string>MVP_IMAGE</string>
        </property>
       </widget>
      </item>
@@ -165,15 +203,25 @@
      </item>
     </layout>
    </item>
-   <item row="4" column="0">
-    <widget class="QPushButton" name="new_id_button">
-     <property name="text">
-      <string>New ID</string>
-     </property>
-    </widget>
-   </item>
   </layout>
  </widget>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>close_button</sender>
+   <signal>clicked()</signal>
+   <receiver>stats_display_window</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>259</x>
+     <y>382</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>177</x>
+     <y>386</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>

@@ -10,6 +10,11 @@ public:
     parse_file();
     QString parse_user_data(QString option, QString split);
     QString parse_csgo_data(QString option);
+    void parse_users(); /* parse file */
+    QStringList get_usernames(); /* returns pre parsed data */
+    QStringList get_ids(); /* returns pre parsed data */
+    QStringList usernames;
+    QStringList userids;
 };
 
 #endif // PARSE_FILE_H
