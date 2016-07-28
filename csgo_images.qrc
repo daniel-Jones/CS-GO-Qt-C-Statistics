@@ -2,6 +2,8 @@
     <qresource prefix="/icons">
         <file>icons/mvp.png</file>
         <file>icons/avatar.jpg</file>
+        <file>icons/domination.png</file>
+        <file>icons/suicide.png</file>
     </qresource>
     <qresource prefix="/weapons">
         <file>weapons/ak47.png</file>
@@ -12,7 +14,6 @@
         <file>weapons/deagle.png</file>
         <file>weapons/decoy.png</file>
         <file>weapons/decoy_impact.png</file>
-        <file>weapons/domination.png</file>
         <file>weapons/elite.png</file>
         <file>weapons/famas.png</file>
         <file>weapons/fiveseven.png</file>
@@ -53,11 +54,11 @@
         <file>weapons/smokegrenade.png</file>
         <file>weapons/smokegrenade_impact.png</file>
         <file>weapons/ssg08.png</file>
-        <file>weapons/suicide.png</file>
         <file>weapons/taser.png</file>
         <file>weapons/tec9.png</file>
         <file>weapons/ump45.png</file>
         <file>weapons/usp.png</file>
         <file>weapons/xm1014.png</file>
+        <file>weapons/m249.png</file>
     </qresource>
 </RCC>

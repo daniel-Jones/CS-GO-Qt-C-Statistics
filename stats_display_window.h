@@ -40,37 +40,43 @@ private:
         QString total_kills;
         QString total_deaths;
         float kd_ratio;
-        /* weapon stats */
-        QString ak47_kills;
-        QString deagle_kills;
-        QString m4_kills;
-        QString awp_kills;
-        QString aug_kills;
-        QString bizon_kills;
-        QString elite_kills;
-        QString famas_kills;
-        QString fiveseven_kills;
-        QString g3sg1_kills;
-        QString galilar_kills;
-        QString glock_kills;
-        QString hegrenade_kills;
-        QString hkp2000_kills;
-        QString knife_kills;
-        QString m249_kills;
-        QString mac10_kills;
-        QString mag7_kills;
-        QString mp7_kills;
-        QString negev_kills;
-        QString nova_kills;
-        QString p250_kills;
-        QString p90_kills;
-        QString sawedoff_kills;
-        QString scar20_kills;
-        QString sg556_kills;
-        QString ssg08_kills;
-        QString tec9_kills;
-        QString ump45_kills;
-        QString xm1014_kills;
+        QString weapons[33][6] = {
+        /*weapon name | image location | kills | shots | hits | ratio of hits to shots */
+            {"ak47", ":/weapons/weapons/ak47.png", "0", "0", "0", "0"},
+            {"awp", ":/weapons/weapons/awp.png", "0", "0", "0", "0"},
+            {"p90", ":/weapons/weapons/p90.png", "0", "0", "0", "0"},
+            {"deagle", ":/weapons/weapons/deagle.png", "0", "0", "0", "0"},
+            {"m4", ":/weapons/weapons/m4a1.png", "0", "0", "0", "0"},
+            {"knife", ":/weapons/weapons/knife.png", "0", "0", "0", "0"},
+            {"fiveseven", ":/weapons/weapons/fiveseven.png", "0", "0", "0", "0"},
+            {"hkp2000", ":/weapons/weapons/hkp2000.png", "0", "0", "0", "0"},
+            {"glock", ":/weapons/weapons/glock.png", "0", "0", "0", "0"},
+            {"p250", ":/weapons/weapons/p250.png", "0", "0", "0", "0"},
+            {"mp7", ":/weapons/weapons/mp7.png", "0", "0", "0", "0"},
+            {"galil", ":/weapons/weapons/galil.png", "0", "0", "0", "0"},
+            {"ump45", ":/weapons/weapons/ump45.png", "0", "0", "0", "0"},
+            {"tec9", ":/weapons/weapons/tec9.png", "0", "0", "0", "0"},
+            {"negev", ":/weapons/weapons/negev.png", "0", "0", "0", "0"},
+            {"m249", ":/weapons/weapons/m249.png", "0", "0", "0", "0"},
+            {"g3sg1", ":/weapons/weapons/g3sg1.png", "0", "0", "0", "0"},
+            {"scar20", ":/weapons/weapons/scar20.png", "0", "0", "0", "0"},
+            {"aug", ":/weapons/weapons/aug.png", "0", "0", "0", "0"},
+            {"sg556", ":/weapons/weapons/sg556.png", "0", "0", "0", "0"},
+            {"nova", ":/weapons/weapons/nova.png", "0", "0", "0", "0"},
+            {"sawedoff", ":/weapons/weapons/sawedoff.png", "0", "0", "0", "0"},
+            {"xm1014", ":/weapons/weapons/xm1014.png", "0", "0", "0", "0"},
+            {"mag7", ":/weapons/weapons/mag7.png", "0", "0", "0", "0"},
+            {"mp9", ":/weapons/weapons/mpn.png", "0", "0", "0", "0"},
+            {"ssg08", ":/weapons/weapons/ssg08.png", "0", "0", "0", "0"},
+            {"bizon", ":/weapons/weapons/bizon.png", "0", "0", "0", "0"},
+            {"mac10", ":/weapons/weapons/mac10.png", "0", "0", "0", "0"},
+            {"famas", ":/weapons/weapons/famas.png", "0", "0", "0", "0"},
+            {"hegrenade", ":/weapons/weapons/hegrenade.png", "0", "0", "0", "0"},
+            {"elite", ":/weapons/weapons/elite.png", "0", "0", "0", "0"},
+            {"taser", ":/weapons/weapons/taser.png", "0", "0", "0", "0"},
+            {"molotov", ":/weapons/weapons/molotov.png", "0", "0", "0", "0"},
+        };
+
     } user;
     file_download download;
     parse_file parse;

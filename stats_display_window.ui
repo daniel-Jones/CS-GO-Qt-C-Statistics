@@ -93,38 +93,31 @@
        </property>
       </widget>
      </item>
-     <item row="6" column="0">
+     <item row="5" column="0">
       <widget class="QLabel" name="mvp_number_label">
        <property name="text">
         <string>MVPs</string>
        </property>
       </widget>
      </item>
-     <item row="7" column="0">
+     <item row="6" column="0">
       <widget class="QLabel" name="total_kills_label">
        <property name="text">
         <string>total kills</string>
        </property>
       </widget>
      </item>
-     <item row="8" column="0">
+     <item row="7" column="0">
       <widget class="QLabel" name="total_deaths_label">
        <property name="text">
         <string>total deaths</string>
        </property>
       </widget>
      </item>
-     <item row="9" column="0">
+     <item row="8" column="0">
       <widget class="QLabel" name="kd_ratio_label">
        <property name="text">
         <string>K/D ratio</string>
-       </property>
-      </widget>
-     </item>
-     <item row="5" column="0">
-      <widget class="QLabel" name="mvp_label">
-       <property name="text">
-        <string>MVP_IMAGE</string>
        </property>
       </widget>
      </item>
@@ -168,7 +161,10 @@
           </size>
          </property>
          <property name="frameShape">
-          <enum>QFrame::Panel</enum>
+          <enum>QFrame::NoFrame</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Plain</enum>
          </property>
          <property name="sizeAdjustPolicy">
           <enum>QAbstractScrollArea::AdjustToContents</enum>
@@ -180,7 +176,7 @@
           <bool>false</bool>
          </property>
          <property name="showGrid">
-          <bool>false</bool>
+          <bool>true</bool>
          </property>
          <property name="cornerButtonEnabled">
           <bool>false</bool>
@@ -191,11 +187,14 @@
          <attribute name="horizontalHeaderDefaultSectionSize">
           <number>100</number>
          </attribute>
+         <attribute name="horizontalHeaderMinimumSectionSize">
+          <number>15</number>
+         </attribute>
          <attribute name="verticalHeaderVisible">
           <bool>false</bool>
          </attribute>
          <attribute name="verticalHeaderDefaultSectionSize">
-          <number>50</number>
+          <number>70</number>
          </attribute>
         </widget>
        </item>
