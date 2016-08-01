@@ -7,6 +7,7 @@
 #include "file_download.h"
 #include "stats_display_window.h"
 #include "parse_file.h"
+#include "user_management.h"
 
 namespace Ui {
 class user_select_dialog;
@@ -25,10 +26,15 @@ private slots:
 
     void on_player_dropdown_currentIndexChanged(int index);
 
+    void on_manage_users_button_clicked();
+
+    void on_refresh_users_button_clicked();
+
 private:
     Ui::user_select_dialog *ui;
     file_download download;
     stats_display_window n_window;
+    user_management manage;
     parse_file parse;
     void download_info();
     void load_players();

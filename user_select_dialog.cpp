@@ -77,6 +77,19 @@ void user_select_dialog::load_players()
 
 void user_select_dialog::on_player_dropdown_currentIndexChanged(int index)
 {
-    if (!usernames.isEmpty())
+    if (!usernames.isEmpty() && index != -1)
         ui->steam_url_text->setText(userids.at(index));
+}
+
+void user_select_dialog::on_manage_users_button_clicked()
+{
+    manage.show();
+}
+
+void user_select_dialog::on_refresh_users_button_clicked()
+{
+    ui->player_dropdown->clear();
+    usernames.clear();
+    userids.clear();
+    load_players();
 }

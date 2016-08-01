@@ -91,3 +91,39 @@ QStringList parse_file::get_ids()
 {
     return userids;
 }
+
+void parse_file::delete_user(QString user)
+{
+    /* copy pasta, make pretty */
+    qDebug() << "deleting user" << user;
+    QFile f("users.dat");
+    if(f.open(QIODevice::ReadWrite | QIODevice::Text))
+    {
+        QString s;
+        QTextStream t(&f);
+        while(!t.atEnd())
+        {
+            QString line = t.readLine();
+            if(line != user)
+                s.append(line + "\n");
+        }
+        f.resize(0);
+        t << s;
+        f.close();
+    }
+}
+
+void parse_file::add_user(QString user)
+{
+    qDebug() << "adding user" << user;
+    QFile file("users.dat");
+    if(!file.open(QIODevice::Append)) {
+        qDebug() << "Cannot open file to save";
+
+    } else
+    {
+        QTextStream stream(&file);
+        stream << user;
+        file.close();
+    }
+}

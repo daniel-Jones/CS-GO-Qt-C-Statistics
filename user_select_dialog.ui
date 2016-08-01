@@ -10,8 +10,14 @@
     <x>0</x>
     <y>0</y>
     <width>269</width>
-    <height>138</height>
+    <height>190</height>
    </rect>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>269</width>
+    <height>16777215</height>
+   </size>
   </property>
   <property name="windowTitle">
    <string>Select a Steam account</string>
@@ -20,10 +26,10 @@
    <layout class="QVBoxLayout" name="verticalLayout">
     <item>
      <layout class="QGridLayout" name="gridLayout">
-      <item row="5" column="0">
-       <widget class="QPushButton" name="close_button">
+      <item row="3" column="0">
+       <widget class="QLineEdit" name="steam_url_text">
         <property name="text">
-         <string>Close</string>
+         <string>76561198055087665</string>
         </property>
        </widget>
       </item>
@@ -34,22 +40,36 @@
         </property>
        </widget>
       </item>
-      <item row="3" column="0">
-       <widget class="QLineEdit" name="steam_url_text">
-        <property name="text">
-         <string>76561198055087665</string>
-        </property>
-       </widget>
-      </item>
-      <item row="4" column="0">
+      <item row="6" column="0">
        <widget class="QPushButton" name="select_account_button">
         <property name="text">
          <string>Select</string>
         </property>
        </widget>
       </item>
+      <item row="5" column="0">
+       <widget class="QPushButton" name="manage_users_button">
+        <property name="text">
+         <string>Manage users</string>
+        </property>
+       </widget>
+      </item>
       <item row="2" column="0">
        <widget class="QComboBox" name="player_dropdown"/>
+      </item>
+      <item row="7" column="0">
+       <widget class="QPushButton" name="close_button">
+        <property name="text">
+         <string>Close</string>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="0">
+       <widget class="QPushButton" name="refresh_users_button">
+        <property name="text">
+         <string>Refresh list</string>
+        </property>
+       </widget>
       </item>
      </layout>
     </item>

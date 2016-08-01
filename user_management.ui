@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>user_management</class>
+ <widget class="QWidget" name="user_management">
+  <property name="windowModality">
+   <enum>Qt::ApplicationModal</enum>
+  </property>
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>157</width>
+    <height>208</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>User Management</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <widget class="QComboBox" name="user_dropdown"/>
+   </item>
+   <item>
+    <widget class="QPushButton" name="delete_user_button">
+     <property name="text">
+      <string>Remove selected user</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QPushButton" name="refresh_users_button">
+     <property name="text">
+      <string>Refresh list</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QLabel" name="username_label">
+     <property name="text">
+      <string>Username</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QLineEdit" name="username_text">
+     <property name="placeholderText">
+      <string>Username</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QLabel" name="stean_id_label">
+     <property name="text">
+      <string>Steam ID</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QLineEdit" name="user_id_text">
+     <property name="placeholderText">
+      <string>Steam ID</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QPushButton" name="add_user_button">
+     <property name="text">
+      <string>Add user</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QPushButton" name="close_button">
+     <property name="text">
+      <string>Close</string>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>close_button</sender>
+   <signal>clicked()</signal>
+   <receiver>user_management</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>99</x>
+     <y>84</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>94</x>
+     <y>107</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

@@ -61,4 +61,26 @@
         <file>weapons/xm1014.png</file>
         <file>weapons/m249.png</file>
     </qresource>
+    <qresource prefix="/maps">
+        <file>maps/ar_baggage.png</file>
+        <file>maps/ar_monastery.png</file>
+        <file>maps/ar_shoots.png</file>
+        <file>maps/cs_assault.png</file>
+        <file>maps/cs_italy.png</file>
+        <file>maps/cs_militia.png</file>
+        <file>maps/cs_office.png</file>
+        <file>maps/de_aztec.png</file>
+        <file>maps/de_bank.png</file>
+        <file>maps/de_cbble.png</file>
+        <file>maps/de_dust.png</file>
+        <file>maps/de_dust2.png</file>
+        <file>maps/de_inferno.png</file>
+        <file>maps/de_lake.png</file>
+        <file>maps/de_nuke.png</file>
+        <file>maps/de_safehouse.png</file>
+        <file>maps/de_stmarc.png</file>
+        <file>maps/de_sugarcane.png</file>
+        <file>maps/de_train.png</file>
+        <file>maps/de_vertigo.png</file>
+    </qresource>
 </RCC>

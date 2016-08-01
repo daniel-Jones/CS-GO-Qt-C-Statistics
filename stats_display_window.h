@@ -3,8 +3,10 @@
 
 #include <QWidget>
 #include <QDebug>
+#include <QLabel>
 #include "file_download.h"
 #include "parse_file.h"
+#include "user_management.h"
 
 namespace Ui {
 class stats_display_window;
@@ -40,6 +42,31 @@ private:
         QString total_kills;
         QString total_deaths;
         float kd_ratio;
+        QString maps[20][6] = {
+            /* map name | image location | rounds total | rounds win | rounds lost | win percent*/
+            {"cs_assault", ":/maps/maps/cs_assault.png", "", "", ""},
+            {"cs_italy", ":/maps/maps/cs_italy.png", "", "", "", ""},
+            {"cs_office", ":/maps/maps/cs_office.png", "", "", "", ""},
+            {"de_aztec", ":/maps/maps/de_aztec.png", "", "", "", ""},
+            {"de_cbble", ":/maps/maps/de_cbble.png", "", "", "", ""},
+            {"de_dust2", ":/maps/maps/de_dust2.png", "", "", "", ""},
+            {"de_dust", ":/maps/maps/de_dust.png", "", "", "", ""},
+            {"de_inferno", ":/maps/maps/de_inferno.png", "" "", "", ""},
+            {"de_nuke", ":/maps/maps/de_nuke.png", "", "", "", ""},
+            {"de_train", ":/maps/maps/de_train.png", "", "", "", ""},
+            {"de_lake", ":/maps/maps/de_lake.png", "", "", "", ""},
+            {"de_stmarc", ":/maps/maps/de_stmarc.png", "", "", "", ""},
+            {"de_safehouse", ":/maps/maps/de_safehouse.png", "" "", "" , ""},
+            {"ar_baggage", ":/maps/maps/ar_baggage.png", "", "", "", ""},
+            {"ar_shoots", ":/maps/maps/ar_shoots.png", "", "", "", ""},
+            {"de_bank", ":/maps/maps/de_bank.png", "", "", "", ""},
+            {"ar_monas", ":/maps/maps/ar_monastery.png", "" "", "", ""},
+            {"de_vertigo", ":/maps/maps/de_vertigo.png", "", "", "", ""},
+            {"de_sugarcane", ":/maps/maps/de_sugarcane.png", "", "", "", ""},
+            {"cs_militia", ":/maps/maps/cs_militia.png", "", "", "", ""},
+        };
+        QList<QLabel *> map_labels;
+        QList<QLabel *> map_stat_labels;
         QString weapons[33][6] = {
         /*weapon name | image location | kills | shots | hits | ratio of hits to shots */
             {"ak47", ":/weapons/weapons/ak47.png", "0", "0", "0", "0"},
@@ -76,12 +103,14 @@ private:
             {"taser", ":/weapons/weapons/taser.png", "0", "0", "0", "0"},
             {"molotov", ":/weapons/weapons/molotov.png", "0", "0", "0", "0"},
         };
-
+        QList<QLabel *> weapon_labels;
+        QList<QLabel *> stat_labels;
     } user;
     file_download download;
     parse_file parse;
     QStringList usernames;
     QStringList userids;
+    user_management manage;
 signals:
       void window_loaded();
 
@@ -90,6 +119,7 @@ private slots:
     void on_refresh_button_clicked();
     void on_new_id_button_clicked();
     void on_users_dropdown_currentIndexChanged(int index);
+    void on_manage_users_button_clicked();
 };
 
 #endif // STATS_DISPLAY_WINDOW_H

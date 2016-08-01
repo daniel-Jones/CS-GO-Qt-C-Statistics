@@ -68,34 +68,56 @@ void stats_display_window::setup_user()
 
 void stats_display_window::setup_csgo_data()
 {
-    /* this function populates our data templates and filsl in the UI */
+    /* this function populates our data templates and fills in the UI */
+    /* tables */
     ui->weapon_table->setColumnCount(2);
     ui->weapon_table->setRowCount(33);
-    /* set data in user,weapons */
+    ui->map_table->setColumnCount(2);
+    ui->map_table->setRowCount(20);
+    /*
+     * set data in user.weapons
+     * create a qlabel for each weapon * 2 and set the info
+     */
     for (int x = 0; x < 33; x++)
     {
+        /* parse stats */
         user.weapons[x][2] = parse.parse_csgo_data("total_kills_" + user.weapons[x][0]);
         user.weapons[x][3] = parse.parse_csgo_data("total_shots_" + user.weapons[x][0]);
         user.weapons[x][4] = parse.parse_csgo_data("total_hits_" + user.weapons[x][0]);
         user.weapons[x][5] = QString::number(user.weapons[x][4].toFloat() / user.weapons[x][3].toFloat(), 'f', 2);
+        /* set weapon label */
+        user.weapon_labels << new QLabel(this);
+        user.weapon_labels.at(x)->setTextFormat(Qt::RichText);
+        user.weapon_labels.at(x)->setText("<center><img src=" + user.weapons[x][1] + "> <br /> " + user.weapons[x][0] + " </center>");
+        ui->weapon_table->setCellWidget(x, 0, user.weapon_labels.at(x));
+        /* set weapon stat labels */
+        user.stat_labels << new QLabel(this);
+        user.stat_labels.at(x)->setTextFormat(Qt::RichText);
+        user.stat_labels.at(x)->setText(user.weapons[x][2] + " kills <br />" + user.weapons[x][3] + " shots <br />" + user.weapons[x][4] + " hits <br />" + user.weapons[x][5] + " hit ratio");
+        ui->weapon_table->setCellWidget(x, 1, user.stat_labels.at(x));
     }
-    /* weapon label/image */
-    QList<QLabel *> weapon_labels;
-    for (int i = 0; i < 33; ++i)
+
+    /*
+     * set data in user.maps
+     * create a qlabel for each map * 2 and set the info
+     */
+    for (int x = 0; x < 20; x++)
     {
-       weapon_labels << new QLabel(this);
-       weapon_labels.at(i)->setTextFormat(Qt::RichText);
-       weapon_labels.at(i)->setText("<img src=" + user.weapons[i][1] + "> <br /> <center>" + user.weapons[i][0] + " </center>");
-       ui->weapon_table->setCellWidget(i, 0, weapon_labels.at(i));
-    }
-    /* stats */
-    QList<QLabel *> stat_labels;
-    for (int i = 0; i < 33; ++i)
-    {
-       stat_labels << new QLabel(this);
-       stat_labels.at(i)->setTextFormat(Qt::RichText);
-       stat_labels.at(i)->setText(user.weapons[i][2] + " kills <br />" + user.weapons[i][3] + " shots <br />" + user.weapons[i][4] + " hits <br />" + user.weapons[i][5] + " hit ratio");
-       ui->weapon_table->setCellWidget(i, 1, stat_labels.at(i));
+        /* parse stats */
+        user.maps[x][2] = parse.parse_csgo_data("total_rounds_map_" + user.maps[x][0] + '"');
+        user.maps[x][3] = parse.parse_csgo_data("total_wins_map_" + user.maps[x][0] + '"');
+        user.maps[x][4] = QString::number(user.maps[x][2].toInt() - user.maps[x][3].toInt());
+        user.maps[x][5] = QString::number(user.maps[x][3].toFloat() / user.maps[x][2].toFloat(), 'f', 2);
+        /* set map label */
+        user.map_labels << new QLabel(this);
+        user.map_labels.at(x)->setTextFormat(Qt::RichText);
+        user.map_labels.at(x)->setText("<center><img src=" + user.maps[x][1] + "> <br /> " + user.maps[x][0] + " </center>");
+        ui->map_table->setCellWidget(x, 0, user.map_labels.at(x));
+        /* set map stat labels */
+        user.map_stat_labels << new QLabel(this);
+        user.map_stat_labels.at(x)->setTextFormat(Qt::RichText);
+        user.map_stat_labels.at(x)->setText(user.maps[x][2] + " rounds <br />" + user.maps[x][3] + " won <br />" + user.maps[x][4] + " lost <br />" + user.maps[x][5] + " W/L ratio");
+        ui->map_table->setCellWidget(x, 1, user.map_stat_labels.at(x));
     }
 
     /* time played */
@@ -182,13 +204,21 @@ void stats_display_window::on_refresh_button_clicked()
 
 void stats_display_window::on_new_id_button_clicked()
 {
-    user.user_64id = ui->new_steam_id->text();
-    reload_profile();
-    load_players();
+    if (ui->new_steam_id->text() != "")
+    {
+        user.user_64id = ui->new_steam_id->text();
+        reload_profile();
+        load_players();
+    }
 }
 
 void stats_display_window::on_users_dropdown_currentIndexChanged(int index)
 {
     if (!usernames.isEmpty() && index != -1)
         ui->new_steam_id->setText(userids.at(index));
+}
+
+void stats_display_window::on_manage_users_button_clicked()
+{
+    manage.show();
 }

@@ -16,15 +16,18 @@ SOURCES += main.cpp\
         user_select_dialog.cpp \
     file_download.cpp \
     stats_display_window.cpp \
-    parse_file.cpp
+    parse_file.cpp \
+    user_management.cpp
 
 HEADERS  += user_select_dialog.h \
     file_download.h \
     stats_display_window.h \
-    parse_file.h
+    parse_file.h \
+    user_management.h
 
 FORMS    += user_select_dialog.ui \
-    stats_display_window.ui
+    stats_display_window.ui \
+    user_management.ui
 
 RESOURCES += \
     csgo_images.qrc

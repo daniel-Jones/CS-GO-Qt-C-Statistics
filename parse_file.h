@@ -15,6 +15,8 @@ public:
     QStringList get_ids(); /* returns pre parsed data */
     QStringList usernames;
     QStringList userids;
+    void delete_user(QString user);
+    void add_user(QString user);
 };
 
 #endif // PARSE_FILE_H
