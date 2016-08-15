@@ -3,6 +3,7 @@
 #include <QFile>
 #include <QDebug>
 #include <QTextStream>
+#include "message_box.h"
 
 class parse_file
 {
@@ -16,6 +17,7 @@ public:
     QStringList usernames;
     QStringList userids;
     void delete_user(QString user);
+    message_box msgbox;
     void add_user(QString user);
 };
 

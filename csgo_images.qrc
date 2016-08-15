@@ -4,6 +4,8 @@
         <file>icons/avatar.jpg</file>
         <file>icons/domination.png</file>
         <file>icons/suicide.png</file>
+        <file>icons/CT.png</file>
+        <file>icons/T.png</file>
     </qresource>
     <qresource prefix="/weapons">
         <file>weapons/ak47.png</file>
@@ -82,5 +84,30 @@
         <file>maps/de_sugarcane.png</file>
         <file>maps/de_train.png</file>
         <file>maps/de_vertigo.png</file>
+        <file>maps/images/ar_baggage.png</file>
+        <file>maps/images/ar_monastery.png</file>
+        <file>maps/images/ar_shoots.png</file>
+        <file>maps/images/cs_assault.png</file>
+        <file>maps/images/cs_italy.png</file>
+        <file>maps/images/cs_militia.png</file>
+        <file>maps/images/cs_office.png</file>
+        <file>maps/images/de_aztec.png</file>
+        <file>maps/images/de_bank.png</file>
+        <file>maps/images/de_cache.png</file>
+        <file>maps/images/de_cbble.png</file>
+        <file>maps/images/de_dust.png</file>
+        <file>maps/images/de_dust2.png</file>
+        <file>maps/images/de_inferno.png</file>
+        <file>maps/images/de_lake.png</file>
+        <file>maps/images/de_mirage.png</file>
+        <file>maps/images/de_nuke.png</file>
+        <file>maps/images/de_overpass.png</file>
+        <file>maps/images/de_safehouse.png</file>
+        <file>maps/images/de_shortdust.png</file>
+        <file>maps/images/de_shorttrain.png</file>
+        <file>maps/images/de_stmarc.png</file>
+        <file>maps/images/de_sugarcane.png</file>
+        <file>maps/images/de_train.png</file>
+        <file>maps/images/de_vertigo.png</file>
     </qresource>
 </RCC>

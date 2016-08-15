@@ -7,11 +7,19 @@ stats_display_window::stats_display_window(QWidget *parent) :
 {
     ui->setupUi(this);
     connect(this, SIGNAL(window_loaded()), this, SLOT(window_open()), Qt::ConnectionType(Qt::QueuedConnection | Qt::UniqueConnection));
+    ui->graphical_view_button->hide(); /* will i ever do this? */
 }
 
 stats_display_window::~stats_display_window()
 {
     delete ui;
+}
+
+QStringList stats_display_window::get_most_kills_gun()
+{
+    QStringList ret;
+    ret << "1" << "2";
+    return ret;
 }
 
 void stats_display_window::setup_user()
@@ -27,7 +35,11 @@ void stats_display_window::setup_user()
     user.user_64id = parse.parse_user_data("\"steamid\":", ": ");
     download.download_file(user.avatar_url, "avatar.jpg");
     /* now we have to deal with our user account details */
-    ui->username_label->setText(user.username.left(15));
+    if (user.username.length() > 15)
+    {
+        ui->username_label->setText(user.username.left(15) + "[...]");
+    } else
+        ui->username_label->setText(user.username);
     if (user.realname == "null")
         ui->realname_label->setText("Real name not set");
     else
@@ -221,4 +233,17 @@ void stats_display_window::on_users_dropdown_currentIndexChanged(int index)
 void stats_display_window::on_manage_users_button_clicked()
 {
     manage.show();
+}
+
+void stats_display_window::on_graphical_view_button_clicked()
+{
+    graphs.show();
+}
+
+void stats_display_window::on_game_integration_button_clicked()
+{
+    /*
+     * game state integration
+     */
+    game.show();
 }

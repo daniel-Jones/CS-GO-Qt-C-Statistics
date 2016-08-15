@@ -24,5 +24,8 @@ int file_download::file_download::download_file(QString url, QString save_locati
     if (QFile::exists(save_location) && file.size() > 0)
         return 1; /* file downloaded - could just be a blank file at this point */
     else
+    {
+        msgbox.info_box("Unable to download file", "Notice");
         return 0; /* file did not download */
+    }
 }

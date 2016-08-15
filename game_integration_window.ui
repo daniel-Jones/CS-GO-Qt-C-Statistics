@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>game_integration_window</class>
+ <widget class="QWidget" name="game_integration_window">
+  <property name="windowModality">
+   <enum>Qt::WindowModal</enum>
+  </property>
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>400</width>
+    <height>300</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Game Integration</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <layout class="QFormLayout" name="player_layout">
+     <item row="0" column="0">
+      <widget class="QLabel" name="map_picture_label">
+       <property name="text">
+        <string>map_picture</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="1">
+      <layout class="QFormLayout" name="player_info_layout">
+       <item row="0" column="0">
+        <widget class="QLabel" name="player_name_label">
+         <property name="text">
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;player_name&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QLabel" name="player_team_label">
+         <property name="text">
+          <string>player_team</string>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="0">
+        <widget class="QLabel" name="player_score_label">
+         <property name="text">
+          <string>player_score</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="0">
+        <widget class="QLabel" name="kills_label">
+         <property name="text">
+          <string>kills_count</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="0">
+        <widget class="QLabel" name="deaths_label">
+         <property name="text">
+          <string>deaths_count</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="team_icon_layout">
+     <item>
+      <widget class="QLabel" name="ct_label">
+       <property name="text">
+        <string>CT_label</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="round_number_label">
+       <property name="text">
+        <string>round_number</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="t_label">
+       <property name="text">
+        <string>T_label</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QGridLayout" name="team_score_layout">
+     <item row="0" column="2">
+      <widget class="QLabel" name="t_score_label">
+       <property name="text">
+        <string>T_score</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="1">
+      <widget class="QLabel" name="buffer_label">
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="0">
+      <widget class="QLabel" name="ct_score_label">
+       <property name="text">
+        <string>CT_score</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <widget class="QTextEdit" name="console"/>
+   </item>
+   <item>
+    <widget class="QPushButton" name="start_server_button">
+     <property name="text">
+      <string>Start server</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QPushButton" name="stop_server_button">
+     <property name="text">
+      <string>Stop server</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QPushButton" name="close_window_button">
+     <property name="text">
+      <string>Close window</string>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

@@ -35,9 +35,19 @@ void user_management::on_refresh_users_button_clicked()
 
 void user_management::on_delete_user_button_clicked()
 {
-    QString to_remove = ui->user_dropdown->currentText() + "=" + userids.at(ui->user_dropdown->currentIndex());
-    parse.delete_user(to_remove);
-    load_players();
+    int opt = msgbox.confirm_box("You are about to delete a user", "Are you sure?", "Warning");
+    switch (opt) {
+       case QMessageBox::Yes: {
+            QString to_remove = ui->user_dropdown->currentText() + "=" + userids.at(ui->user_dropdown->currentIndex());
+            parse.delete_user(to_remove);
+            load_players();
+            break;
+    }
+       case QMessageBox::No:
+           break;
+       default:
+           break;
+     }
 }
 
 void user_management::on_add_user_button_clicked()

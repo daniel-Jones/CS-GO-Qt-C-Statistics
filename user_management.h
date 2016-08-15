@@ -4,6 +4,7 @@
 #include <QWidget>
 #include <QDebug>
 #include "parse_file.h"
+#include "message_box.h"
 
 namespace Ui {
 class user_management;
@@ -30,6 +31,7 @@ private:
     QStringList usernames;
     QStringList userids;
     void load_players();
+    message_box msgbox;
 };
 
 #endif // USER_MANAGEMENT_H

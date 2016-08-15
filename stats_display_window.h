@@ -4,9 +4,16 @@
 #include <QWidget>
 #include <QDebug>
 #include <QLabel>
+#include <message_box.h>
 #include "file_download.h"
 #include "parse_file.h"
 #include "user_management.h"
+#include "game_integration_window.h"
+#include <graphical_stats.h>
+#include <QtCharts/QChartView>
+#include <QtCharts/QPieSeries>
+#include <QtCharts/QPieSlice>
+#include <QtCharts>
 
 namespace Ui {
 class stats_display_window;
@@ -23,6 +30,7 @@ protected:
 public:
     explicit stats_display_window(QWidget *parent = 0);
     ~stats_display_window();
+      QStringList get_most_kills_gun();
 
 private:
     Ui::stats_display_window *ui;
@@ -55,14 +63,14 @@ private:
             {"de_nuke", ":/maps/maps/de_nuke.png", "", "", "", ""},
             {"de_train", ":/maps/maps/de_train.png", "", "", "", ""},
             {"de_lake", ":/maps/maps/de_lake.png", "", "", "", ""},
-            {"de_stmarc", ":/maps/maps/de_stmarc.png", "", "", "", ""},
+            {"de_stmarc", ":/maps/maps/images/de_stmarc.png", "", "", "", ""},
             {"de_safehouse", ":/maps/maps/de_safehouse.png", "" "", "" , ""},
             {"ar_baggage", ":/maps/maps/ar_baggage.png", "", "", "", ""},
-            {"ar_shoots", ":/maps/maps/ar_shoots.png", "", "", "", ""},
+            {"ar_shoots", ":/maps/maps/images/ar_shoots.png", "", "", "", ""},
             {"de_bank", ":/maps/maps/de_bank.png", "", "", "", ""},
-            {"ar_monas", ":/maps/maps/ar_monastery.png", "" "", "", ""},
-            {"de_vertigo", ":/maps/maps/de_vertigo.png", "", "", "", ""},
-            {"de_sugarcane", ":/maps/maps/de_sugarcane.png", "", "", "", ""},
+            {"ar_monas", ":/maps/maps/images/ar_monastery.png", "" "", "", ""},
+            {"de_vertigo", ":/maps/maps/images/de_vertigo.png", "", "", "", ""},
+            {"de_sugarcane", ":/maps/maps/images/de_sugarcane.png", "", "", "", ""},
             {"cs_militia", ":/maps/maps/cs_militia.png", "", "", "", ""},
         };
         QList<QLabel *> map_labels;
@@ -111,6 +119,9 @@ private:
     QStringList usernames;
     QStringList userids;
     user_management manage;
+    message_box msgbox;
+    graphical_stats graphs;
+    game_integration_window game;
 signals:
       void window_loaded();
 
@@ -120,6 +131,8 @@ private slots:
     void on_new_id_button_clicked();
     void on_users_dropdown_currentIndexChanged(int index);
     void on_manage_users_button_clicked();
+    void on_graphical_view_button_clicked();
+    void on_game_integration_button_clicked();
 };
 
 #endif // STATS_DISPLAY_WINDOW_H

@@ -9,14 +9,103 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>643</width>
-    <height>402</height>
+    <width>645</width>
+    <height>587</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>CS:GO Statistics</string>
   </property>
   <layout class="QGridLayout" name="gridLayout">
+   <item row="2" column="2">
+    <widget class="QPushButton" name="manage_users_button">
+     <property name="text">
+      <string>Manage users</string>
+     </property>
+    </widget>
+   </item>
+   <item row="8" column="2">
+    <widget class="QPushButton" name="new_id_button">
+     <property name="text">
+      <string>New user</string>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="0">
+    <layout class="QFormLayout" name="stats_layout">
+     <item row="0" column="0">
+      <widget class="QLabel" name="avatar_label">
+       <property name="text">
+        <string>avatar</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="0">
+      <widget class="QLabel" name="username_label">
+       <property name="font">
+        <font>
+         <family>Arial [Mono]</family>
+         <pointsize>14</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>username</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="0">
+      <widget class="QLabel" name="realname_label">
+       <property name="text">
+        <string>realname</string>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="0">
+      <widget class="QLabel" name="status_label">
+       <property name="text">
+        <string>status</string>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="0">
+      <widget class="QLabel" name="time_in_label">
+       <property name="text">
+        <string>Time in CS:GO</string>
+       </property>
+      </widget>
+     </item>
+     <item row="5" column="0">
+      <widget class="QLabel" name="mvp_number_label">
+       <property name="text">
+        <string>MVPs</string>
+       </property>
+      </widget>
+     </item>
+     <item row="6" column="0">
+      <widget class="QLabel" name="total_kills_label">
+       <property name="text">
+        <string>total kills</string>
+       </property>
+      </widget>
+     </item>
+     <item row="7" column="0">
+      <widget class="QLabel" name="total_deaths_label">
+       <property name="text">
+        <string>total deaths</string>
+       </property>
+      </widget>
+     </item>
+     <item row="8" column="0">
+      <widget class="QLabel" name="kd_ratio_label">
+       <property name="text">
+        <string>K/D ratio</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
    <item row="0" column="2">
     <layout class="QGridLayout" name="base_grid">
      <item row="0" column="0">
@@ -146,12 +235,8 @@
      </item>
     </layout>
    </item>
-   <item row="7" column="0">
-    <widget class="QPushButton" name="close_button">
-     <property name="text">
-      <string>Close</string>
-     </property>
-    </widget>
+   <item row="1" column="2">
+    <widget class="QComboBox" name="users_dropdown"/>
    </item>
    <item row="6" column="2">
     <widget class="QLineEdit" name="new_steam_id">
@@ -160,90 +245,19 @@
      </property>
     </widget>
    </item>
-   <item row="1" column="2">
-    <widget class="QComboBox" name="users_dropdown"/>
-   </item>
-   <item row="7" column="2">
-    <widget class="QPushButton" name="new_id_button">
+   <item row="8" column="0">
+    <widget class="QPushButton" name="close_button">
      <property name="text">
-      <string>New user</string>
+      <string>Close</string>
      </property>
     </widget>
    </item>
-   <item row="0" column="0">
-    <layout class="QFormLayout" name="stats_layout">
-     <item row="0" column="0">
-      <widget class="QLabel" name="avatar_label">
-       <property name="text">
-        <string>avatar</string>
-       </property>
-      </widget>
-     </item>
-     <item row="1" column="0">
-      <widget class="QLabel" name="username_label">
-       <property name="font">
-        <font>
-         <family>Arial [Mono]</family>
-         <pointsize>14</pointsize>
-         <weight>75</weight>
-         <bold>true</bold>
-        </font>
-       </property>
-       <property name="text">
-        <string>username</string>
-       </property>
-      </widget>
-     </item>
-     <item row="2" column="0">
-      <widget class="QLabel" name="realname_label">
-       <property name="text">
-        <string>realname</string>
-       </property>
-      </widget>
-     </item>
-     <item row="3" column="0">
-      <widget class="QLabel" name="status_label">
-       <property name="text">
-        <string>status</string>
-       </property>
-      </widget>
-     </item>
-     <item row="4" column="0">
-      <widget class="QLabel" name="time_in_label">
-       <property name="text">
-        <string>Time in CS:GO</string>
-       </property>
-      </widget>
-     </item>
-     <item row="5" column="0">
-      <widget class="QLabel" name="mvp_number_label">
-       <property name="text">
-        <string>MVPs</string>
-       </property>
-      </widget>
-     </item>
-     <item row="6" column="0">
-      <widget class="QLabel" name="total_kills_label">
-       <property name="text">
-        <string>total kills</string>
-       </property>
-      </widget>
-     </item>
-     <item row="7" column="0">
-      <widget class="QLabel" name="total_deaths_label">
-       <property name="text">
-        <string>total deaths</string>
-       </property>
-      </widget>
-     </item>
-     <item row="8" column="0">
-      <widget class="QLabel" name="kd_ratio_label">
-       <property name="text">
-        <string>K/D ratio</string>
-       </property>
-      </widget>
-     </item>
-    </layout>
+   <item row="3" column="0">
+    <widget class="QPushButton" name="graphical_view_button">
+     <property name="text">
+      <string>Graphical view</string>
+     </property>
+    </widget>
    </item>
    <item row="6" column="0">
     <widget class="QPushButton" name="refresh_button">
@@ -252,10 +266,10 @@
      </property>
     </widget>
    </item>
-   <item row="2" column="2">
-    <widget class="QPushButton" name="manage_users_button">
+   <item row="4" column="0">
+    <widget class="QPushButton" name="game_integration_button">
      <property name="text">
-      <string>Manage users</string>
+      <string>Game integration</string>
      </property>
     </widget>
    </item>

@@ -35,6 +35,8 @@ void user_select_dialog::download_info()
     ui->select_account_button->setEnabled(false);
     ui->steam_url_text->setEnabled(false);
     ui->player_dropdown->setEnabled(false);
+    ui->manage_users_button->setEnabled(false);
+    ui->refresh_users_button->setEnabled(false);
     ui->info_label->setText("Downloading data..");
     /* user data was a last second thought when designing this fucntion, clean it up one day, error checking etc */
     qDebug() << "Attempting to download user data";
@@ -60,6 +62,8 @@ void user_select_dialog::download_info()
         ui->close_button->setEnabled(true);
         ui->select_account_button->setEnabled(true);
         ui->steam_url_text->setEnabled(true);
+        ui->player_dropdown->setEnabled(true);
+        ui->manage_users_button->setEnabled(true);
         ui->info_label->setText("Failed to download, try again.");
     }
 }

@@ -5,6 +5,7 @@
 #include <QNetworkAccessManager>
 #include <QNetworkReply>
 #include <QFile>
+#include "message_box.h"
 
 class file_download
 {
@@ -14,6 +15,7 @@ public:
 private:
     QNetworkAccessManager http;
     QEventLoop loop;
+    message_box msgbox;
 };
 
 #endif // FILE_DOWNLOAD_H
