@@ -14,6 +14,12 @@ game_integration_window::game_integration_window(QWidget *parent) :
     ui->t_label->setTextFormat(Qt::RichText);
     ui->ct_label->setText("<center><img src=:/icons/icons/CT.png></center>");
     ui->t_label->setText("<center><img src=:/icons/icons/T.png></center>");
+    /* fill our weapon_labels with 8 labels */
+    for (int x = 0; x < 8; x++)
+    {
+        game.weapon_labels << new QLabel(this);
+        game.weapon_labels.at(x)->setTextFormat(Qt::RichText);
+    }
 }
 
 game_integration_window::~game_integration_window()
@@ -53,6 +59,16 @@ void game_integration_window::handle_data(QString data)
         game.stats_map = game.player_map["match_stats"].toMap();
         game.ct_score_map = game.map_map["team_ct"].toMap();
         game.t_score_map = game.map_map["team_t"].toMap();
+        game.weapon_1_map = game.weapon_map["weapon_0"].toMap();
+        game.weapon_2_map = game.weapon_map["weapon_1"].toMap();
+        game.weapon_3_map = game.weapon_map["weapon_2"].toMap();
+        game.weapon_4_map = game.weapon_map["weapon_3"].toMap();
+        game.weapon_5_map = game.weapon_map["weapon_4"].toMap();
+        game.weapon_6_map = game.weapon_map["weapon_5"].toMap();
+        game.weapon_7_map = game.weapon_map["weapon_6"].toMap();
+        game.weapon_8_map = game.weapon_map["weapon_7"].toMap();
+        game.weapon_9_map = game.weapon_map["weapon_8"].toMap();
+        game.weapon_10_map = game.weapon_map["weapon_9"].toMap();
         display_data();
     }
 }
@@ -78,13 +94,61 @@ void game_integration_window::display_data()
         if (game.current_team == "CT")
             ui->player_team_label->setText("Counter Terrorist");
     }
-    ui->player_name_label->setText("<font size = 15>" + game.player_map["name"].toString() + "</font>");
+    if (game.player_map["name"].toString().length() > 9) /* username too long */
+    {
+        ui->player_name_label->setText("<font size = 15>" + game.player_map["name"].toString().left(9) + "[...]</font>");
+    } else
+        ui->player_name_label->setText("<font size = 15>" + game.player_map["name"].toString() + "</font>");
     ui->player_score_label->setText("Score: " + game.stats_map["score"].toString());
     ui->ct_score_label->setText("<center>" + game.ct_score_map["score"].toString() + "</center>");
     ui->t_score_label->setText("<center>" + game.t_score_map["score"].toString() + "</center>");
     ui->round_number_label->setText("<center><font size = 10> Round <br />" + game.map_map["round"].toString() + "</font></center>");
     ui->kills_label->setText("Kills: " + game.stats_map["kills"].toString());
     ui->deaths_label->setText("Deaths: " + game.stats_map["deaths"].toString());
+    /* weapons */
+    /* TODO: find a better way? */
+    if (game.weapon_1_map["name"].toString() != "")
+        ui->weapon_1_label->setText("<img src=:/weapons/weapons/" + game.weapon_1_map["name"].toString() + ".png>");
+    else
+        ui->weapon_1_label->setText("");
+    if (game.weapon_2_map["name"].toString() != "")
+        ui->weapon_2_label->setText("<img src=:/weapons/weapons/" + game.weapon_2_map["name"].toString() + ".png><br />" + game.weapon_2_map["ammo_clip"].toString() + " " + game.weapon_2_map["ammo_reserve"].toString());
+    else
+        ui->weapon_2_label->setText("");
+    if (game.weapon_3_map["name"].toString() != "")
+        ui->weapon_3_label->setText("<img src=:/weapons/weapons/" + game.weapon_3_map["name"].toString() + ".png><br />" + game.weapon_3_map["ammo_clip"].toString() + " " + game.weapon_3_map["ammo_reserve"].toString());
+    else
+        ui->weapon_3_label->setText("");
+    if (game.weapon_4_map["name"].toString() != "")
+        ui->weapon_4_label->setText("<img src=:/weapons/weapons/" + game.weapon_4_map["name"].toString() + ".png><br />" + game.weapon_4_map["ammo_clip"].toString() + " " + game.weapon_4_map["ammo_reserve"].toString());
+    else
+        ui->weapon_4_label->setText("");
+    if (game.weapon_5_map["name"].toString() != "")
+        ui->weapon_5_label->setText("<img src=:/weapons/weapons/" + game.weapon_5_map["name"].toString() + ".png><br />" + game.weapon_5_map["ammo_clip"].toString() + " " + game.weapon_5_map["ammo_reserve"].toString());
+    else
+        ui->weapon_5_label->setText("");
+    if (game.weapon_6_map["name"].toString() != "")
+        ui->weapon_6_label->setText("<img src=:/weapons/weapons/" + game.weapon_6_map["name"].toString() + ".png><br />" + game.weapon_6_map["ammo_clip"].toString() + " " + game.weapon_6_map["ammo_reserve"].toString());
+    else
+        ui->weapon_6_label->setText("");
+    if (game.weapon_7_map["name"].toString() != "")
+        ui->weapon_7_label->setText("<img src=:/weapons/weapons/" + game.weapon_7_map["name"].toString() + ".png><br />" + game.weapon_7_map["ammo_clip"].toString() + " " + game.weapon_7_map["ammo_reserve"].toString());
+    else
+        ui->weapon_7_label->setText("");
+    if (game.weapon_8_map["name"].toString() != "")
+        ui->weapon_8_label->setText("<img src=:/weapons/weapons/" + game.weapon_8_map["name"].toString() + ".png><br />" + game.weapon_8_map["ammo_clip"].toString() + " " + game.weapon_8_map["ammo_reserve"].toString());
+    else
+        ui->weapon_8_label->setText("");
+    if (game.weapon_9_map["name"].toString() != "")
+        ui->weapon_9_label->setText("<img src=:/weapons/weapons/" + game.weapon_9_map["name"].toString() + ".png><br />" + game.weapon_9_map["ammo_clip"].toString() + " " + game.weapon_9_map["ammo_reserve"].toString());
+    else
+        ui->weapon_9_label->setText("");
+    if (game.weapon_10_map["name"].toString() != "")
+        ui->weapon_10_label->setText("<img src=:/weapons/weapons/" + game.weapon_10_map["name"].toString() + ".png><br />" + game.weapon_10_map["ammo_clip"].toString() + " " + game.weapon_10_map["ammo_reserve"].toString());
+    else
+        ui->weapon_10_label->setText("");
+
+
 }
 
 void game_integration_window::showEvent(QShowEvent *ev)

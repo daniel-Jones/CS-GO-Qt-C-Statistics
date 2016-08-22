@@ -8,6 +8,7 @@
 #include <QJsonDocument>
 #include <QJsonObject>
 #include <QJsonArray>
+#include <QLabel>
 
 namespace Ui {
 class game_integration_window;
@@ -31,16 +32,27 @@ private:
         QJsonDocument json_doc;
         QJsonObject json_object;
         QVariantMap main_map;
-         QVariantMap map_map;
+        QVariantMap map_map;
         QVariantMap player_map;
         QVariantMap round_map;
         QVariantMap weapon_map;
         QVariantMap stats_map;
         QVariantMap ct_score_map;
         QVariantMap t_score_map;
+        QVariantMap weapon_1_map;
+        QVariantMap weapon_2_map;
+        QVariantMap weapon_3_map;
+        QVariantMap weapon_4_map;
+        QVariantMap weapon_5_map;
+        QVariantMap weapon_6_map;
+        QVariantMap weapon_7_map;
+        QVariantMap weapon_8_map;
+        QVariantMap weapon_9_map;
+        QVariantMap weapon_10_map;
         QString current_user_id;
         QString current_map;
         QString current_team;
+        QList<QLabel *> weapon_labels;
     } game;
 
 protected:
